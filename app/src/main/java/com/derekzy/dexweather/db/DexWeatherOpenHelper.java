@@ -18,16 +18,15 @@ public class DexWeatherOpenHelper extends SQLiteOpenHelper {
                 " province_name text not null," +
                 "province_code text not null)");
         db.execSQL("create table if not exists City(_id integer primary key autoincrement," +
-                " city_name_name text not null," +
-                " city_code text not null, province_id integer not null)");
+                " city_name text not null," +
+                " city_code text not null, province_id integer)");
         db.execSQL("create table if not exists County(_id integer primary key autoincrement," +
                 " county_name text not null," +
-                " province_code text not null, city_id integer not null)");
+                " county_code text not null, city_id integer not null)");
 
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
     }
 }
